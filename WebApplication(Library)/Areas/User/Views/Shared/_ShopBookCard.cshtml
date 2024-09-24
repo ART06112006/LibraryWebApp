@@ -1,0 +1,27 @@
+﻿@model WebApplication_Library_.Models.Book
+
+<div class="col-md-4 mt-3 book">
+    <div class="p-3 card book-card @Model.IsBorrowed">
+        <img src="@Model.Photo" class="card-img-top book-cover">
+        <p class="title-p"><span style="font-weight: bold">Title:</span><span class="title-span">@Model.Title</span></p>
+        <p class="author-p"><span style="font-weight: bold">Author:</span><span class="author-span">@Model.Author</span></p>
+        <p><span style="font-weight: bold">Year published:</span> @Model.YearPublished</p>
+        <div class="d-flex flex-row justify-content-end align-items-end" style="height: 100%">
+            <a style="width: 15%" class="mt-1 me-3" href="@Url.RouteUrl("User_default", new {controller = "Cart", action = "BorrowBook", bookId = Model.Id })">
+                @if (Model.UserId == ViewBag.CurrentUser.Id)
+                {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart-check" viewBox="0 0 16 16">
+                        <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0z" />
+                        <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                    </svg>
+                }
+                else
+                {
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+                        <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+                    </svg>
+                }
+            </a>
+        </div>
+    </div>
+</div>

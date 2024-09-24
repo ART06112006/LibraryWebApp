@@ -1,0 +1,61 @@
+﻿@{
+    Layout = "~/Views/Shared/_LibraryMainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    @section styles{
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        @Styles.Render("~/Content/index")
+    }
+
+    @section scripts{
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    }
+    <style>
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 30%;
+            background-color: #2C3E50;
+            color: #ECF0F1;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #dee2e6;
+            box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.2);
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <a class="btn btn-primary mt-2 ms-auto" href="@Url.RouteUrl("Default", new {controller = "Authorization", action = "Login"})">
+                        Main Page
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container my-5">
+            <h1 class="text-center mb-4">Admin Panel</h1>
+            <div class="d-flex flex-row justify-content-around align-items-center p-2">
+                <a class="btn btn-primary mt-2" href="@Url.RouteUrl("Admin_default", new {controller = "Shop", action = "Index"})">Manage Books</a>
+                <a class="btn btn-primary mt-2" href="@Url.RouteUrl("Admin_default", new {controller = "User", action = "Index"})">Manage Users</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

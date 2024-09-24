@@ -1,0 +1,17 @@
+﻿@model Exception
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Exception Message: @Model.Message</h1>
+        <h4>Details: @Model.ToString()</h4>
+    </hgroup>
+
+    <a class="btn btn-primary me-4 mt-4" href="@Url.RouteUrl(new {area = "", controller = "Authorization", action = "Login"})">Main Page</a>
+</body>
+</html>

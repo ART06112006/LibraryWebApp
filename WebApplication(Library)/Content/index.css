@@ -1,0 +1,64 @@
+﻿/* Navbar */
+.navbar {
+    background-color: #2C3E50;
+}
+
+.navbar-brand, .nav-link {
+    color: #ECF0F1 !important;
+}
+
+    .nav-link:hover {
+        color: #F39C12 !important;
+    }
+
+/* Book Card */
+.book-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #F8F9F9;
+    border: none;
+}
+
+    .book-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+.book-cover {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #2C3E50;
+}
+
+.btn-primary {
+    background-color: #F39C12;
+    border-color: #F39C12;
+}
+
+    .btn-primary:hover {
+        background-color: #E67E22;
+        border-color: #E67E22;
+    }
+
+/* Main Content Background */
+body {
+    background: linear-gradient(120deg, #F39C12, #E67E22);
+    color: #2C3E50;
+}
+
+.container {
+    background-color: #ECF0F1;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: #2C3E50;
+    color: #ECF0F1;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}

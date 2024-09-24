@@ -1,0 +1,16 @@
+﻿@model WebApplication_Library_.Models.User
+
+<tr>
+    <th scope="row">@Model.Id</th>
+    <td>@Model.Role</td>
+    <td>@Model.Login</td>
+    <td>@Model.Name</td>
+    <td>@Model.Email</td>
+    <td>@Model.DateOfBirth.ToString("dd-MM-yyyy")</td>
+    <td>@Model.BorrowedBooks.Count</td>
+    <td>
+        <a class="mt-1 me-3" href="@Url.RouteUrl("Admin_default", new {controller = "User", action = "RemoveUser", id = Model.Id })">
+            <img style="width: 50px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/2048px-Cross_red_circle.svg.png" />
+        </a>
+    </td>
+</tr>

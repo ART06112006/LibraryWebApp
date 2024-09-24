@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LibraryMainLayout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+</head>
+<body>
+    <header>
+        <h1 align="center">Register</h1>
+    </header>
+
+    <main>
+        <div class="d-flex flex-row justify-content-center">
+            <form id="registerUser" action="@Url.Action("Register", "Authorization")" method="post" class="d-flex flex-column align-items-center" style="width: 50%">
+                <div class="form-row d-flex flex-row justify-content-around">
+                    <div class="me-2">
+                        <label for="login">Login</label>
+                        <input type="text" class="form-control" id="login" placeholder="supermetafounder32" name="Login" required>
+                        <div class="invalid-feedback" hidden>
+                            Please, choose a login
+                        </div>
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="Password" required>
+                        <div class="invalid-feedback" hidden>
+                            Please, choose a password
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row d-flex flex-row justify-content-around mt-3">
+                    <div class="me-2">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Mark Zuckerberg" name="Name" required>
+                        <div class="invalid-feedback" hidden>
+                            Please, enter your name
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="markzuckerberg@meta.com" name="Email" required>
+                        <div class="invalid-feedback" hidden>
+                            Please, enter your Email
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row d-flex flex-row justify-content-around mt-3">
+                    <div class="me-5">
+                        <label for="role">Role</label>
+                        <select class="custom-select" id="role" name="Role" required>
+                            <option selected disabled value="">Choose...</option>
+                            <option value="0">User</option>
+                            <option value="1">Admin</option>
+                        </select>
+                        <div class="invalid-feedback" hidden>
+                            Please select a role
+                        </div>
+                    </div>
+                    <div>
+                        <label for="dateOfBirth">Date of birth</label>
+                        <input class="form-check-input" type="date" id="dateOfBirth" name="DateOfBirth" required>
+                        <div class="invalid-feedback" hidden>
+                            Please select your date of birth
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group mt-3 mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="agreeTerms" required>
+                        <label class="form-check-label" for="agreeTerms">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback" hidden>
+                            You must agree before submitting.
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

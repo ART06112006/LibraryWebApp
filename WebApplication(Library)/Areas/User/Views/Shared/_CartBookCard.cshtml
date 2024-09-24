@@ -1,0 +1,15 @@
+﻿@model WebApplication_Library_.Models.Book
+
+<div class="col-md-4 mt-3">
+    <div class="p-3 card book-card @Model.IsBorrowed">
+        <img src="@Model.Photo" class="card-img-top book-cover">
+        <p><span style="font-weight: bold">Title:</span> @Model.Title</p>
+        <p><span style="font-weight: bold">Author:</span> @Model.Author</p>
+        <p><span style="font-weight: bold">Year published:</span> @Model.YearPublished</p>
+        <div class="d-flex flex-row justify-content-end align-items-end" style="height: 100%">
+            <a style="width: 15%" class="mt-1 me-3" href="@Url.RouteUrl("User_default", new {controller = "Cart", action = "GiveBackBook", bookId = Model.Id })">
+                <img style="width: 100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/2048px-Cross_red_circle.svg.png" />
+            </a>
+        </div>
+    </div>
+</div>

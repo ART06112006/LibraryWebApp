@@ -1,0 +1,24 @@
+﻿@model WebApplication_Library_.Models.Book
+
+<div class="col-md-4 mt-3 book">
+    <div class="p-3 card book-card">
+        <p class="bookId" hidden>@Model.Id</p>
+        <img src="@Model.Photo" class="card-img-top book-cover">
+        <p class="bookTitle title-p"><span style="font-weight: bold">Title:</span><span class="title-span">@Model.Title</span></p>
+        <p class="bookAuthor author-p"><span style="font-weight: bold">Author:</span><span class="author-span">@Model.Author</span></p>
+        <p class="bookYear"><span style="font-weight: bold">Year published:</span> @Model.YearPublished</p>
+        <p class="bookIsBorrowed"><span style="font-weight: bold">Is borrowed:</span> @Model.IsBorrowed</p>
+        <div class="d-flex flex-row justify-content-between align-items-end" style="height: 100%">
+            <button style="width: 15%" class="btn btn-success mt-1 me-3 updateBookButton" data-bs-toggle="offcanvas" data-bs-target="#offcanvasUpdate">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
+                    <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41m-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9" />
+                    <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5 5 0 0 0 8 3M3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9z" />
+                </svg>
+            </button>
+            <a style="width: 15%" class="mt-1 me-3" href="@Url.RouteUrl("Admin_default", new {controller = "Shop", action = "RemoveBook", id = Model.Id })">
+                <img style="width: 100%" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/2048px-Cross_red_circle.svg.png" />
+            </a>
+        </div>
+    </div>
+</div>
+
